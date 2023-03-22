@@ -17,19 +17,28 @@
 
             <a href="./index.html"><img src="./assets/logo-desktop.svg" alt="Logo" id="logo"></a>
 
-            <nav>
-                <p class="nav">Home</p>
-                <p class="nav">Menu</p>
-                <p class="nav">Recompensas</p>
-                <p class="nav">GiftCards</p>
-                <p class="nav">Lojas</p>
-            </nav>
+            <div id="navbar">
+                <nav>
+                    <p class="nav"><a href="#">Home</a></p>
+                    <p class="nav"><a href="#">Menu</a></p>
+                    <p class="nav"><a href="#">Recompensas</a></p>
+                    <p class="nav"><a href="#">GiftCards</a></p>
+                    <p class="nav"><a href="#">Lojas</a></p>
+                </nav>
+            </div>
 
-            <button id="btn">PEGAR MEU CAFÉ</button>
+            <div id="menu" onclick="openMenuMobile()"></div>
+
+            <button id="btn" type="submit">PEGAR MEU CAFÉ</button>
 
         </header>
 
         <main>
+
+            <p id="text">O café que fará seu código decolar para o próximo nível.</p>
+
+            <div id="btn-con"><button id="btn-2">PEGAR MEU CAFÉ &gt</button></div>
+
             <h1 id="coffee">Great Coffee</h1>
 
             <h1 id="code">&ltGreat Code/&gt</h1>
@@ -39,6 +48,7 @@
             <img src="./assets/rocket-coffee.png" alt="" id="copo">
         </footer>
     </div>
+    <script src="./main.js"></script>
 </body>
 
 </html>

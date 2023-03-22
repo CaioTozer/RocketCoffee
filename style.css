@@ -2,88 +2,314 @@
 
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+@media  screen and (max-width: 699px) {
+    body {
+        background-color: #000000;
+        font-family: 'Manrope',  sans-serif;
+        min-height: 100vh;
+        background-image: url('./assets/blur-mobile.png');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% 250px;
+    }
+    
+    #btn-2 {
+        color: #FFFFFF;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        cursor: pointer;
+    
+        background: none;
+        width: 172px;
+        height: 37px;
+    
+        border-radius: 6px;
+        border: solid 1px #8257E5;
+        transition: all .3s ease;
+    }
+    
+    #btn-2:hover {
+        background-color: #8257E5;
+        transition: all .3s ease;
+        transform: scale(1.05);
+    }
+    
+    #btn-2:active {
+        transform: scale(0.95);
+    }
+    
+    header {
+        height: 70px;
+        border-bottom: #29292e 1px solid;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.1rem;
+    }
+    
+    #navbar {
+        position: absolute;
+        top: 71px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0;
+        opacity: 0;
+        z-index: 1000;
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+        background-color: #000;
+    }
+    
+    #navbar.open {
+        width: 100%;
+        opacity: 1;
+    }
+    
+    #navbar nav {
+        list-style: none;
+    }
+    
+    #navbar p {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: #8257e5 1px solid;
+    }
+    
+    #navbar p.selected {
+        border-left: #8257e5 4px solid;
+    }
+    
+    #navbar a {
+        color: #a8a8b3;
+        text-decoration: none;
+        padding-left: 2rem;
+    }
+    
+    #navbar p.selected a {
+        color: #fff;
+    }
+    
+    #logo {
+        animation-name: logo-animation;
+        animation-duration: 3s;
+        transition: all .3s ease;
+    }
+    
+    #menu {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 20px 20px;
+        width: 20px;
+        height: 100%;
+        cursor: pointer;
+        animation: fadeInRight;
+        animation-duration: 1s;
+    }
+    
+    #menu.open {
+        background-image: url('./assets/menu-buguer-close.svg');
+    }
+    #menu.close {
+        background-image: url('./assets/menu-buguer-open.svg');
+    }
+    
+    #btn {
+        display: none;
+    }
+    
+    #text {
+        max-width: 300px;
+        margin: 120px auto;
+        animation: fadeInDown;
+        animation-duration: 1.5s;
+        font-family: 'Manrope',  sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+    }
+    
+    #btn-con {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: flipInX;
+        animation-duration: 1.6s;
+    }
+    #btn-2 {
+        width: 200px;
+        height: 37px;
+    }
+    
+    #coffee {
+        font-weight: bold;
+        color: #fff;
+        font-size: 50px;
+    }
+    #code {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        font-size: 50px;
+        text-shadow:
+            -1px -1px 0px #8257E5,
+            -1px 1px 0px #8257E5,
+            1px -1px 0px #8257E5F5,
+            1px 0px 0px #8257E5;
+    }
+    #coffee, #code {
+        text-align: center;
+    }   
 
-body {
-    background-color: #000000;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url('./assets/blur-1.png'), url('./assets/blur-2.png');
-    background-repeat: no-repeat, no-repeat;
-    background-position: 0% 100%, 100% 0%;
+    footer {
+        width: 100%;
+        height: 100%;
+    }
+
+    #copo {
+        width: 100%;
+        height: 100%;
+    }
 }
+@media screen and (min-width: 700px) {}
 
-header {
-    display: flex;
-    justify-content: center;
-    gap: 8rem;
-    margin-top: 5vh;
-}
+@media screen and (min-width: 1024px) {
+    body {
+        background-color: #000000;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url('./assets/blur-1.png'), url('./assets/blur-2.png');
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0% 100%, 100% 0%;
+        background-size: contain, contain;
+    }
 
-nav {
-    display: flex;
-    gap: 2rem;
+    header {
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+        margin-top: 5vh;
+        border-bottom: none;
+    }
 
-    color: #FFFFFF;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
+    #menu {
+        display: none;
+    }
 
-    cursor: pointer;
- 
-    height: 30px;
-    transition: all .1s ease;
-}
+    @keyframes logo-animation {
+        0% {
+            transform: scale(0);
+        }
 
-.nav:hover {
-   border-bottom: 4px solid ;
-   transition: all .1s ease;
-}
+        50% {
+            transform: scale(1.2);
+        }
 
-#btn {
-    color: #FFFFFF;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 800;
-    font-size: 11px;
-    cursor: pointer;
+        100% {
+            transform: scale(1);
+            transition: all ease;
+        }
+    }
 
-    background: none;
-    width: 172px;
-    height: 37px;
+    #logo {
+        animation-name: logo-animation;
+        animation-duration: 3s;
+        transition: all .3s ease;
+    }
 
-    border-radius: 6px;
-    border: solid 1px #8257E5;
-    transition: all .3s ease;
-}
+    #logo:hover {
+        transition: all .3s ease;
+        transform: scale(1.05);
+    }
 
-#btn:hover {
-    background-color: #8257E5;
-    transition: all .3s ease;
-}
+    nav {
+        display: flex;
+        gap: 2rem;
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        color: #FFFFFF;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
 
-#coffee {
-    color: #FFFFFF;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 80px;
-}
+        cursor: pointer;
 
-#code {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 80px;
-    text-shadow:
-        -1px -1px 0px #8257E5,
-        -1px 1px 0px #8257E5,
-        1px -1px 0px #8257E5F5,
-        1px 0px 0px #8257E5;
+        height: 30px;
+        transition: all .1s ease;
+    }
+
+    .nav:hover {
+        border-bottom: 4px solid;
+        transition: all .1s ease;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    #btn {
+        color: #FFFFFF;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        cursor: pointer;
+
+        background: none;
+        width: 172px;
+        height: 37px;
+
+        border-radius: 6px;
+        border: solid 1px #8257E5;
+        transition: all .3s ease;
+    }
+
+    #btn:hover {
+        background-color: #8257E5;
+        transition: all .3s ease;
+        transform: scale(1.05);
+    }
+
+    #btn:active {
+        transform: scale(0.95);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #btn-2 {
+        display: none;
+    }
+
+    #text {
+        display: none;
+    }
+
+    #coffee {
+        color: #FFFFFF;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        font-size: 80px;
+    }
+
+    #code {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        font-size: 80px;
+        text-shadow:
+            -1px -1px 0px #8257E5,
+            -1px 1px 0px #8257E5,
+            1px -1px 0px #8257E5F5,
+            1px 0px 0px #8257E5;
+    }
 }
