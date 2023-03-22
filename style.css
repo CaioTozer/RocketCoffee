@@ -5,16 +5,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: #000000;
+    font-family: 'Manrope',  sans-serif;
+    min-height: 100vh;
+    background-image: url('./assets/blur-mobile.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 250px;
+}
+
 @media  screen and (max-width: 699px) {
-    body {
-        background-color: #000000;
-        font-family: 'Manrope',  sans-serif;
-        min-height: 100vh;
-        background-image: url('./assets/blur-mobile.png');
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: 100% 250px;
-    }
     
     #btn-2 {
         color: #FFFFFF;
