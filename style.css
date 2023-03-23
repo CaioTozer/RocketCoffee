@@ -5,9 +5,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #000000;
-    font-family: 'Manrope',  sans-serif;
+    font-family: 'Manrope', sans-serif;
     min-height: 100vh;
     background-image: url('./assets/blur-mobile.png');
     background-repeat: no-repeat;
@@ -15,34 +16,34 @@ body {
     background-size: 100% 250px;
 }
 
-@media  screen and (max-width: 699px) {
-    
+@media screen and (max-width: 699px) {
+
     #btn-2 {
         color: #FFFFFF;
         font-family: 'Manrope', sans-serif;
         font-weight: 800;
         font-size: 11px;
         cursor: pointer;
-    
+
         background: none;
         width: 172px;
         height: 37px;
-    
+
         border-radius: 6px;
         border: solid 1px #8257E5;
         transition: all .3s ease;
     }
-    
+
     #btn-2:hover {
         background-color: #8257E5;
         transition: all .3s ease;
         transform: scale(1.05);
     }
-    
+
     #btn-2:active {
         transform: scale(0.95);
     }
-    
+
     header {
         height: 70px;
         border-bottom: #29292e 1px solid;
@@ -50,7 +51,7 @@ body {
         justify-content: space-between;
         padding: 0.1rem;
     }
-    
+
     #navbar {
         position: absolute;
         top: 71px;
@@ -64,44 +65,55 @@ body {
         transition: 0.2s ease-in-out;
         background-color: #000;
     }
-    
+
     #navbar.open {
         width: 100%;
         opacity: 1;
     }
-    
+
     #navbar nav {
         list-style: none;
     }
-    
+
     #navbar p {
         width: 100%;
         height: 50px;
         display: flex;
         align-items: center;
-        border-bottom: #8257e5 1px solid;
+        border-bottom: #29292E 1px solid;
     }
-    
-    #navbar p.selected {
+
+    #navbar p:hover {
         border-left: #8257e5 4px solid;
     }
-    
+
     #navbar a {
         color: #a8a8b3;
         text-decoration: none;
         padding-left: 2rem;
     }
-    
+
     #navbar p.selected a {
         color: #fff;
     }
-    
+
+    @keyframes logo-animation {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+            transition: all ease;
+        }
+    }
+
     #logo {
         animation-name: logo-animation;
-        animation-duration: 3s;
+        animation-duration: 2s;
         transition: all .3s ease;
     }
-    
+
     #menu {
         background-repeat: no-repeat;
         background-position: center center;
@@ -112,29 +124,44 @@ body {
         animation: fadeInRight;
         animation-duration: 1s;
     }
-    
+
     #menu.open {
         background-image: url('./assets/menu-buguer-close.svg');
     }
+
     #menu.close {
         background-image: url('./assets/menu-buguer-open.svg');
     }
-    
+
     #btn {
         display: none;
     }
-    
+
+    @keyframes text-animation {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+            transition: all ease;
+        }
+    }
+
     #text {
         max-width: 300px;
         margin: 120px auto;
         animation: fadeInDown;
         animation-duration: 1.5s;
-        font-family: 'Manrope',  sans-serif;
+        font-family: 'Manrope', sans-serif;
         font-size: 30px;
         font-weight: 600;
         color: #fff;
+        animation-name: text-animation;
+        animation-duration: 2s;
     }
-    
+
+
     #btn-con {
         width: 100%;
         display: flex;
@@ -143,16 +170,19 @@ body {
         animation: flipInX;
         animation-duration: 1.6s;
     }
+
     #btn-2 {
         width: 200px;
         height: 37px;
     }
-    
+
     #coffee {
         font-weight: bold;
         color: #fff;
         font-size: 50px;
+        margin-top: 40px;
     }
+
     #code {
         font-family: 'Manrope', sans-serif;
         font-weight: 700;
@@ -163,9 +193,11 @@ body {
             1px -1px 0px #8257E5F5,
             1px 0px 0px #8257E5;
     }
-    #coffee, #code {
+
+    #coffee,
+    #code {
         text-align: center;
-    }   
+    }
 
     footer {
         width: 100%;
@@ -177,7 +209,141 @@ body {
         height: 100%;
     }
 }
-@media screen and (min-width: 700px) {}
+
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+    header {
+        display: flex;
+        justify-content: center;
+        border-bottom: #29292E 1px solid;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #btn {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        gap: 70px;
+        margin-top: 70px;
+        margin-bottom: 40px;
+
+        color: #FFFFFF;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+
+        height: 30px;
+        transition: all .1s ease;
+    }
+
+    .nav:hover {
+        border-bottom: 2px solid;
+        transition: all .1s ease;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @keyframes text-animation {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+            transition: all ease;
+        }
+    }
+
+    #text {
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 400;
+        width: 300px;
+        margin-top: 100px;
+        animation-name: text-animation;
+        animation-duration: 2s;
+    }
+
+    #btn-2 {
+        color: #FFFFFF;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        font-size: 14px;
+        cursor: pointer;
+
+        background: none;
+        width: 200px;
+        height: 45px;
+        margin-top: 100px;
+
+        border-radius: 6px;
+        border: solid 1px #8257E5;
+        transition: all .3s ease;
+    }
+
+    #btn-2:hover {
+        background-color: #8257E5;
+        transition: all .3s ease;
+        transform: scale(1.05);
+    }
+
+    #btn-2:active {
+        transform: scale(0.95);
+    }
+
+    #coffee {
+        font-weight: bold;
+        color: #fff;
+        font-size: 60px;
+        margin-top: 40px;
+    }
+
+    #code {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        text-shadow:
+            -1px -1px 0px #8257E5,
+            -1px 1px 0px #8257E5,
+            1px -1px 0px #8257E5F5,
+            1px 0px 0px #8257E5;
+    }
+
+    @keyframes copo-animation {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+            transition: all ease;
+        }
+    }
+
+    #copo {
+        animation-name: copo-animation;
+        animation-duration: 2s;
+    }
+}
 
 @media screen and (min-width: 1024px) {
     body {
@@ -312,5 +478,21 @@ body {
             -1px 1px 0px #8257E5,
             1px -1px 0px #8257E5F5,
             1px 0px 0px #8257E5;
+    }
+
+    @keyframes copo-animation {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+            transition: all ease;
+        }
+    }
+
+    footer {
+        animation-name: copo-animation;
+        animation-duration: 3s;
     }
 }
